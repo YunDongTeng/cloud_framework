@@ -1,6 +1,7 @@
 package com.cloud.framework.order.web;
 
 import com.cloud.framework.order.feign.OrderFeignClient;
+import com.cloud.framework.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -13,23 +14,16 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/order")
 public class OrderController {
 
-    @Autowired
-    private LoadBalancerClient loadBalancerClient;
-
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Autowired
     private OrderFeignClient orderFeignClient;
 
-    @GetMapping("/list")
+    @Autowired
+    private OrderService orderService;
+
+    @GetMapping("/userInfo")
     public String list(){
-       ServiceInstance serviceInstance = loadBalancerClient.choose("user-service");
-
-       String url = "http://"+serviceInstance.getHost()+":"+serviceInstance.getPort()+"/user/900302221";
-
-       System.out.println("URL："+url);
-       return restTemplate.getForObject(url,String.class);
+        return orderService.userInfo();
     }
 
     @GetMapping("/getUserByFeign")

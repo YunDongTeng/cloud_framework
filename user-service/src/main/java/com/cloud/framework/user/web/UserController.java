@@ -18,6 +18,7 @@ public class UserController {
         return url;
     }
 
+
     @GetMapping("/{id}")
     public String get(@PathVariable Long id){
         return "用户信息Id:"+id;

@@ -9,3 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/YunDongTeng/framework-config-server/
+management:
+  security:
+    enabled: false
