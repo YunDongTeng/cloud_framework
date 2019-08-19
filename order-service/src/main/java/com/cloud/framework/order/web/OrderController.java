@@ -31,5 +31,9 @@ public class OrderController {
         return orderFeignClient.user(200019321L);
     }
 
+    @GetMapping("/info")
+    public String info(){
+        return "order info";
+    }
 
 }

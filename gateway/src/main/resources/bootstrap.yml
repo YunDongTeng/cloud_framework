@@ -18,4 +18,16 @@ zuul:
     shop-service:
       path: /path-service/**
       serviceId: shop-service
-
+    host:
+      connect-timeout-millis: 100000
+      socket-time-mills: 600000
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 50000
+hystrix:
+?command:
+??default:
+???execution:
+????isolation:
+?????thread:
+??????timeoutInMilliseconds: 120000
