@@ -1,7 +1,8 @@
 spring:
   profiles:
     active: dev
-
+  zipkin:
+    base-url: http://localhost:9411
 hystrix:
   command:
     default:
@@ -15,3 +16,5 @@ hystrix:
 ribbon:
   ReadTimeout: 3000
   ConnectTimeout: 3000
+logging:
+  config: classpath:logback-spring.xml

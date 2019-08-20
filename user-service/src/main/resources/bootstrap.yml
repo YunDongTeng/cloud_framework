@@ -12,6 +12,8 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  zipkin:
+    base-url: http://localhost:9411
 
 hystrix:
  command:
