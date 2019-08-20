@@ -1,4 +1,4 @@
-package com.cloud.framework.order.mq;
+package com.cloud.framework.user.mq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

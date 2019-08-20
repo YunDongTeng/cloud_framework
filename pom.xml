@@ -32,7 +32,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
         <!--可以配置动态刷新 请求(config-server中使用)/refresh-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

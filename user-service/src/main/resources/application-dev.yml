@@ -4,3 +4,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+spring:
+  rabbitmq:
+    host: 192.168.103.161
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      simple:
+        concurrency: 10  # 并发消费者初始化值
+        max-concurrency: 20 # 并发消费者最大值
+        prefetch: 5 # 每个消费者每次监听可拉去的消息数量
