@@ -11,9 +11,20 @@ spring:
       profile: prod
       discovery:
         enabled: true
-        service-id: config-server
+          service-id: config-server
+
+  ## 配置zipkin Server地址
+  ## 关于zipkin使用，可以通过官方jar包下载使用： wget -O zipkin.jar 'https://search.maven.org/remote_content?g=io.zipkin.java&a=zipkin-server&v=LATEST&c=exec'
+  ## java -jar zipkin.jar 启动应用，默认开启9411端口
   zipkin:
-    base-url: http://localhost:9411
+    enabled: true
+    base-url: http://192.168.103.161:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+    web:
+      skip-pattern: (^cleanup.*)
+
 
 hystrix:
  command:
