@@ -16,3 +16,10 @@ spring:
         concurrency: 10  # 并发消费者初始化值
         max-concurrency: 20 # 并发消费者最大值
         prefetch: 5 # 每个消费者每次监听可拉去的消息数量
+  boot:
+    admin:
+      url: http://localhost:8900
+
+management:
+  security:
+    enabled: false

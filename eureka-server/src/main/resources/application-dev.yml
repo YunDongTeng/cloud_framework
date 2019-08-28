@@ -3,9 +3,16 @@ server:
 spring:
   application:
     name: eureka-server
+  boot:
+    admin:
+      url: http://127.0.0.1:8900
 eureka:
   instance:
     hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false
+
+management:
+  security:
+    enabled: false

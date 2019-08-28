@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: api-gateway
+  boot:
+    admin:
+      url: http://localhost:8900
 eureka:
   client:
     service-url:
@@ -24,3 +27,6 @@ zuul:
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 50000
+management:
+  security:
+    enabled: false
